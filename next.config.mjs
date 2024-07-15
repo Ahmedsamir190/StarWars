@@ -2,5 +2,17 @@
 const nextConfig = {
   reactStrictMode: true,
 };
+const config = {
+  ...nextConfig,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "swapi.dev",
+        pathname: "/api/people/**",
+      },
+    ],
+  },
+};
 
-export default nextConfig;
+export default config;
