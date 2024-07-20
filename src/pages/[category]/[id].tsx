@@ -39,7 +39,7 @@ function ProductDetails({ character }: { character: CharacterDetails }) {
             <div className="mt-14 flex gap-6 max-md:flex-wrap bg-white rounded-lg p-5 text-black">
               <div className=" max-md:basis-full basis-2/4">
                 <Image
-                  src={"/peploe.jpg"}
+                  src={"/peploe.webp"}
                   alt={character.name}
                   width={200}
                   height={300}
