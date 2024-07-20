@@ -1,28 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a A starwars Web Application (Next.js) .TypeScript
 
 ## Getting Started
 
 ![starwarsmac](/public/Macbook-Air.png)
 
-First, run the development server:
+**Welcome to Starwars Web Application**
 
-There are no specific directions, just do it
+- First, run the development server:
 
-After download files just do npm i
+-There are no specific directions, just do it
 
-And start with npm run dev
+1- After download files just do npm i
 
-## Learn More
+2- And start with npm run dev .
 
-To learn more about Next.js, take a look at the following resources:
+## features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+We tried to add an aesthetic touch to enable a unique experience
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1 - We have provided a group of categories that can be accessed
+
+2- When entering a specific category, the existing characters can be discovered and you can interact with them by adding the distinguished characters in the favorite
+
+3- It is also possible to know information about each character
+
+4-We also provide content in more than one language. We currently support English and Arabic, while working on adding more
+
+And some other features that can be discovered .
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can see the website and interact with him in :
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Demo](https://starwarszero.vercel.app/) - We hope you enjoy .
+
+## updates
+
+This is the first release and updates will be worked on in the coming period with the addition of some other features
