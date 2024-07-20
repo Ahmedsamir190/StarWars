@@ -3,19 +3,20 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Zain:wght@200;300;400;700;800;900&display=swap");
 
+body[dir="rtl"] {
+  font-family: "Zain", sans-serif !important;
+}
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
   width: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
-body [dir="rtl"] {
-  font-family: "Cairo", sans-serif;
-}
+
 .container {
   padding: 0 24px;
   margin: 0 auto;
@@ -40,11 +41,11 @@ body [dir="rtl"] {
 }
 
 @layer utilities {
-  .naveffect {
+  .main-category {
     @apply relative
          z-10
          py-2
-         px-6
+         px-4
          rounded-[11px]
 
          before:duration-[0.9s]
@@ -78,7 +79,7 @@ body [dir="rtl"] {
             hover:after:w-full;
   }
   .navbar-mobile {
-    @apply max-[991px]:absolute max-[991px]:top-20 max-[991px]:left-0  max-[991px]:h-[50%] max-[991px]:bg-slate-800 max-[991px]:flex max-[991px]:justify-center max-[991px]:items-center  max-[991px]:duration-[1.5s];
+    @apply max-[991px]:absolute max-[991px]:top-20 max-[991px]:left-0  max-[991px]:h-1/2 max-[991px]:bg-slate-800 max-[991px]:flex max-[991px]:justify-center max-[991px]:items-center  max-[991px]:duration-[1.5s];
   }
 }
 .title {
@@ -107,8 +108,19 @@ body [dir="rtl"] {
 ::-webkit-scrollbar-thumb {
   background-color: yellow;
 }
-.main-bg {
-  background-image: url("/ufo.gif");
+
+.backgroundimage {
+  background-image: url("/background.webp");
   background-position: center;
   background-size: cover;
+  position: relative;
+}
+.backgroundimage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0000001c;
 }
