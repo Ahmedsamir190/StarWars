@@ -34,7 +34,7 @@ function MainPage() {
         aria-label={"Main Content"}
       >
         <h1
-          className="font-black max-[767px]:text-lg text-3xl capitalize flex items-center gap-2  "
+          className="font-black max-[767px]:text-lg text-3xl max-[359px]:text-base capitalize flex items-center gap-2  "
           aria-label={"Title"}
         >
           {isClient ? t("MainTitle") : " title "}

@@ -199,7 +199,7 @@ function ProductDetails({ character }: { character: CharacterDetails }) {
                   className="flex gap-6 items-center justify-center bg-black p-3 text-white rounded-xl mt-6"
                 >
                   {isClient
-                    ? `${t("BackToCategory")}: ${category}`
+                    ? `${t("BackToCategory")} ${category}`
                     : "BackToCategory"}
 
                   {lang === "ar" ? (
