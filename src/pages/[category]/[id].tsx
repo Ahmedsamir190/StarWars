@@ -19,7 +19,7 @@ function ProductDetails({ character }: { character: CharacterDetails }) {
       <div className="container">
         <div>
           <div className=" bg-white rounded-lg text-black p-6 flex justify-between row">
-            <h1 className="font-black capitalize">{`${category} -${[id]}`}</h1>
+            <h1 className="font-black capitalize">{`${category} - ${id}`}</h1>
             {lang === "ar" ? (
               <Link href={`/${category}`}>
                 <FaRegArrowAltCircleLeft className="text-3xl" />
@@ -48,19 +48,25 @@ function ProductDetails({ character }: { character: CharacterDetails }) {
               </div>
 
               <div className=" max-md:basis-full basis-2/4 flex flex-col gap-4">
-                <h1>
+                {/* <h1>
                   <span className="font-black">
                     {isClient ? t("name") : "name"}
                   </span>
                   :{character.name}
-                </h1>
+                </h1> */}
                 {/* Here check for the different details of the character if true start display */}
                 {isClient ? (
                   <>
+                    {character.name && (
+                      <p>
+                        <span className="font-black">{t("name")}</span>:
+                        {` ${character.name}`}
+                      </p>
+                    )}
                     {character.title && (
                       <p>
-                        <span className="font-black">{t("specifictitle")}</span>{" "}
-                        :{` ${character.title}`}
+                        <span className="font-black">{t("specifictitle")}</span>
+                        : {` ${character.title}`}
                       </p>
                     )}
                     {character.height && (
@@ -214,6 +220,7 @@ function ProductDetails({ character }: { character: CharacterDetails }) {
 export const getServerSideProps = async ({ params }: any) => {
   try {
     const { category, id } = params;
+
     const response = await fetch(`https://swapi.dev/api/${category}/${id}`);
     const character = await response.json();
 

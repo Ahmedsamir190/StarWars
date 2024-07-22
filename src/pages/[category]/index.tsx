@@ -101,9 +101,9 @@ function Categories({ characters, category }: CategoryProps) {
                         {isClient ? (
                           <>
                             {character.name &&
-                              `${t("name")}${character.name.slice(0, 9)}`}
+                              `${t("name")}: ${character.name.slice(0, 9)}`}
                             {character.title &&
-                              `${t("title")}${character.title.slice(0, 9)}`}
+                              `${t("title")}: ${character.title.slice(0, 9)}`}
                           </>
                         ) : (
                           "name"
@@ -114,15 +114,15 @@ function Categories({ characters, category }: CategoryProps) {
                         {isClient ? (
                           <>
                             {character.height &&
-                              `${t("height")}${character.height}`}
+                              `${t("height")}: ${character.height}`}
                             {character.director &&
-                              `${t("director")}${character.director}`}
+                              `${t("director")}: ${character.director}`}
                             {character.model &&
-                              `${t("model")}${character.model.slice(0, 9)}`}
+                              `${t("model")}: ${character.model.slice(0, 9)}`}
                             {character.designation &&
-                              `${t("designation")}${character.designation}`}
+                              `${t("designation")}: ${character.designation}`}
                             {character.climate &&
-                              `${t("climate")}${character.climate}`}
+                              `${t("climate")}: ${character.climate}`}
                           </>
                         ) : (
                           "height"
@@ -130,7 +130,7 @@ function Categories({ characters, category }: CategoryProps) {
                       </h4>
                       <div className="flex justify-between mt-4 items-center">
                         <Link
-                          href={`/${category}/${index}`}
+                          href={`/${category}/${index + 1}`}
                           className="bg-black text-white rounded-xl px-4 py-2 opacity-50 hover:opacity-100 duration-700"
                         >
                           {isClient ? t("details") : "details"}
