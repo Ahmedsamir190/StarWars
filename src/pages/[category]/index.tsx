@@ -154,7 +154,7 @@ function Categories({ characters, category }: CategoryProps) {
                               onClick={() => {
                                 toast.success(
                                   `${character.title || character.name} ${t(
-                                    "addedToFavorites"
+                                    "added To Favorites"
                                   )}`,
                                   { position: "top-left" }
                                 );

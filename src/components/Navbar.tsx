@@ -16,7 +16,7 @@ function NavBar() {
   const router = useRouter();
 
   let searchinput = router.pathname === "/" ? "hidden" : "block";
-  console.log(dropDown);
+  let SpacificCategory = router.query.category;
 
   const toggleNav = () => {
     setNavtoggle(!navtoggle);
@@ -142,27 +142,30 @@ function NavBar() {
                     </span>
                   ) : (
                     starredItems.map(
-                      (item: StarredItemsProps, index: number) => (
-                        <li
-                          key={index}
-                          className="flex items-center justify-between gap-2 p-2 hover:bg-slate-500 duration-700 rounded-xl"
-                        >
-                          <Link
-                            href={`/${"planets"}/${index}`}
-                            className="flex gap-5 "
+                      (item: StarredItemsProps, index: number) => {
+                        let SpacificId = item.url.split(`/`);
+                        return (
+                          <li
+                            key={index}
+                            className="flex items-center justify-between gap-2 p-2 hover:bg-slate-500 duration-700 rounded-xl"
                           >
-                            {item.name && item.name}
-                            {item.title && item.title}
-                          </Link>
-                          <button
-                            className="text-3xl hover:text-red-700 duration-700"
-                            onClick={() => HandleStar(item)}
-                            aria-label={"Remove from Favorites"}
-                          >
-                            <MdDeleteForever />
-                          </button>
-                        </li>
-                      )
+                            <Link
+                              href={`/${SpacificCategory}/${SpacificId[5]}`}
+                              className="flex gap-5 "
+                            >
+                              {item.name && item.name}
+                              {item.title && item.title}
+                            </Link>
+                            <button
+                              className="text-3xl hover:text-red-700 duration-700"
+                              onClick={() => HandleStar(item)}
+                              aria-label={"Remove from Favorites"}
+                            >
+                              <MdDeleteForever />
+                            </button>
+                          </li>
+                        );
+                      }
                     )
                   )}
                 </ul>
