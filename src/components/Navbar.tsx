@@ -16,7 +16,6 @@ function NavBar() {
   const router = useRouter();
 
   let searchinput = router.pathname === "/" ? "hidden" : "block";
-  let SpacificCategory = router.query.category;
 
   const toggleNav = () => {
     setNavtoggle(!navtoggle);
@@ -143,14 +142,15 @@ function NavBar() {
                   ) : (
                     starredItems.map(
                       (item: StarredItemsProps, index: number) => {
-                        let SpacificId = item.url.split(`/`);
+                        let SpacificUrl = item.url.split(`/`);
+
                         return (
                           <li
                             key={index}
                             className="flex items-center justify-between gap-2 p-2 hover:bg-slate-500 duration-700 rounded-xl"
                           >
                             <Link
-                              href={`/${SpacificCategory}/${SpacificId[5]}`}
+                              href={`/${SpacificUrl[4]}/${SpacificUrl[5]}`}
                               className="flex gap-5 "
                             >
                               {item.name && item.name}
