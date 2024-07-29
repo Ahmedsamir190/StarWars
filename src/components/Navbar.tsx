@@ -14,8 +14,11 @@ function NavBar() {
   const [dropDown, setDropDown] = useState(false);
   const { t, lang, i18n, isClient } = useI18nSetup();
   const router = useRouter();
+  const { category, id } = router.query;
 
-  let searchinput = router.pathname === "/" ? "hidden" : "block";
+  console.log(id);
+
+  let searchinput = router.pathname === "/" || id ? "hidden" : "block";
 
   const toggleNav = () => {
     setNavtoggle(!navtoggle);

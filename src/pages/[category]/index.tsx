@@ -103,7 +103,10 @@ function Categories({ characters, category }: CategoryProps) {
                             {character.name &&
                               `${t("name")}: ${character.name.slice(0, 9)}`}
                             {character.title &&
-                              `${t("title")}: ${character.title.slice(0, 9)}`}
+                              `${t("specifictitle")}: ${character.title.slice(
+                                0,
+                                9
+                              )}`}
                           </>
                         ) : (
                           "name"
