@@ -145,7 +145,7 @@ function Categories({ characters, category }: CategoryProps) {
                               onClick={() => {
                                 toast.error(
                                   `${character.title || character.name} ${t(
-                                    "removedFromFavorites"
+                                    "removeFavorite"
                                   )}`,
                                   { position: "top-left" }
                                 );
@@ -157,7 +157,7 @@ function Categories({ characters, category }: CategoryProps) {
                               onClick={() => {
                                 toast.success(
                                   `${character.title || character.name} ${t(
-                                    "added To Favorites"
+                                    "addFavorite"
                                   )}`,
                                   { position: "top-left" }
                                 );

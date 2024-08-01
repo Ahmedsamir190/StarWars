@@ -42,5 +42,7 @@
   "BackToCategory": "Back to ",
   "noavailableinfo": "sorry no available info for this character",
   "Footer": "StarWars - All rights reserved",
-  "items": "No Items Found"
+  "items": "No Items Found",
+  "addFavorite": "added To Favorites",
+  "removeFavorite": "remove from Favorites"
 }

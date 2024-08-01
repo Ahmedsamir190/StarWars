@@ -16,8 +16,6 @@ function NavBar() {
   const router = useRouter();
   const { category, id } = router.query;
 
-  console.log(id);
-
   let searchinput = router.pathname === "/" || id ? "hidden" : "block";
 
   const toggleNav = () => {
@@ -40,7 +38,7 @@ function NavBar() {
       <div className="container flex justify-between min-[991px]:relative items-center ">
         <Link
           href={"/"}
-          className="text-5xl font-black title "
+          className="text-5xl font-black title max-[480px]:text-4xl "
           onClick={() => handleIconClick()}
           aria-label={isClient ? t("Home") : "Home"}
         >
@@ -102,7 +100,7 @@ function NavBar() {
               value={lang}
               aria-label={"Select Language"}
             >
-              <option value="us">English</option>
+              <option value="en">English</option>
               <option value="ar">العربية </option>
             </select>
             {/* favorite part */}

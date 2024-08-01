@@ -6,10 +6,25 @@ import { useI18nSetup } from "@/hooks/useI18nSetup";
 type LayoutProps = {
   children: React.ReactNode;
 };
+import { Montserrat, Cairo } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const cairo = Cairo({
+  subsets: ["arabic"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+});
 function LayOut(props: LayoutProps) {
-  const { t, isClient } = useI18nSetup();
+  const { t, isClient, lang } = useI18nSetup();
   return (
-    <>
+    <div
+      className={
+        lang === "ar" && isClient ? cairo.className : montserrat.className
+      }
+    >
       <Head>
         <title>{isClient ? t("Title") : "StarWars"}</title>
         <meta charSet="UTF-8" />
@@ -28,7 +43,7 @@ function LayOut(props: LayoutProps) {
       <NavBar />
       {props.children}
       <Footer />
-    </>
+    </div>
   );
 }
 

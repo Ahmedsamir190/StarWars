@@ -10,9 +10,6 @@ export function useI18nSetup() {
 
   useEffect(() => {
     setIsClient(true);
-  }, []);
-
-  useEffect(() => {
     window.document.dir = i18n.dir();
   }, [lang]);
 

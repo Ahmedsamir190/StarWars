@@ -2,19 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Zain:wght@200;300;400;700;800;900&display=swap");
-
-body[dir="rtl"] {
-  font-family: "Zain", sans-serif;
-}
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
   width: 100%;
-  font-family: "Montserrat", sans-serif;
 }
 
 .container {

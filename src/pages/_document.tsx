@@ -3,6 +3,8 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   const { lang } = useI18nSetup();
+  console.log(lang);
+
   return (
     <Html lang={lang}>
       <Head />
