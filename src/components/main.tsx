@@ -29,35 +29,41 @@ function MainPage() {
 
   return (
     <div className="container">
-      <div
-        className="flex items-center  gap-y-16 flex-col max-[767px]:px-4  text-white rounded-2xl p-11 border border-gray-400 relative"
-        aria-label={"Main Content"}
-      >
-        <h1
-          className="font-black max-[767px]:text-lg text-3xl max-[359px]:text-base capitalize flex items-center gap-2  "
-          aria-label={"Title"}
+      {isClient ? (
+        <div
+          className="flex items-center  gap-y-16 flex-col max-[767px]:px-4  text-white rounded-2xl p-11 border border-gray-400 relative"
+          aria-label={"Main Content"}
         >
-          {isClient ? t("MainTitle") : " title "}
-          <FaHand className="text-2xl hand" />
-        </h1>
-        <ul
-          className="flex gap-6 items-center max-[991px]:flex-col max-[767px]:gap-y-7font-white text-lg"
-          aria-label={"Category List"}
-        >
-          {categoriess.map((category, index) => (
-            <li key={index} className="main-category" aria-label={category}>
-              <Link
-                href={`/${category}`}
-                aria-label={category}
-                className="flex items-center gap-2"
-              >
-                {categoryIcons[category]}
-                {isClient ? t(`categories.${category}`) : " categories "}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+          <h1
+            className="font-black max-[767px]:text-lg text-3xl max-[359px]:text-base capitalize flex items-center gap-2  "
+            aria-label={"Title"}
+          >
+            {isClient ? t("MainTitle") : " title "}
+            <FaHand className="text-2xl hand" />
+          </h1>
+          <ul
+            className="flex gap-6 items-center max-[991px]:flex-col max-[767px]:gap-y-7font-white text-lg"
+            aria-label={"Category List"}
+          >
+            {categoriess.map((category, index) => (
+              <li key={index} className="main-category" aria-label={category}>
+                <Link
+                  href={`/${category}`}
+                  aria-label={category}
+                  className="flex items-center gap-2"
+                >
+                  {categoryIcons[category]}
+                  {isClient ? t(`categories.${category}`) : " categories "}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <div className="flex items-center justify-center h-screen">
+          <div>Loading...</div>
+        </div>
+      )}
     </div>
   );
 }
